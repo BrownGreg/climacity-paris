@@ -127,7 +127,8 @@ UI par son API REST pour lister les stages les plus longs.
 Sur 10 769 264 relevés et 1 402 stations, le modèle atteint un RMSE de 0,097, une MAE de 0,064 et un R² de 0,829
 sur avril 2021. Le taux mesuré un quart d'heure plus tôt pèse environ 80 % de la prédiction, l'heure et le
 cluster suivent, et chaque variable météo reste sous 0,3 %. La validation croisée retient profondeur 5, 50 arbres
-et pas 0,1, sans améliorer le modèle de départ. Les quatre runs MLflow vont de 0,0969 à 0,0989 de RMSE.
+et pas 0,1, sans améliorer le modèle de départ. Les quatre runs MLflow vont de 0,0969 à 0,0989 de RMSE. La capture `docs/mlflow_runs.png` les montre : le run
+`medium-balanced` porte le modèle `climacity-gbt` en version 1, alias `champion`.
 
 | Mesure | Avant | Après |
 |--------|-------|-------|
@@ -151,7 +152,7 @@ mesure.
 - Le stage `javaToPython` du Spark UI affiche un ratio maximum sur médiane très élevé. Je ne l'ai pas examiné.
 - Deux stations « Château - République » ont le même code d'arrondissement, faute de station actuelle distincte
   pour les départager.
-- Je n'ai pas traité les bonus (qualité de l'air, modèle alternatif) et je ne joins aucune capture de MLflow.
+- Je n'ai pas traité les bonus (qualité de l'air, modèle alternatif).
 
 ## Arborescence
 
@@ -159,6 +160,7 @@ mesure.
 notebooks/   les six carnets exécutés
 scripts/     velib_prep.py (collecte), simulateur_flux.py, mesures.py, executer_carnets.py
 conf/        configuration Spark
+docs/        capture de l'interface MLflow
 data/        données, Parquet, Delta, modèles, carte, mesures, journaux (hors dépôt)
 ```
 
