@@ -1,0 +1,23 @@
+# Données (volumineuses, non versionnées) : le dossier reste, son contenu se régénère
+data/*
+!data/.gitkeep
+
+# Fichiers de checkpoint Spark Streaming
+checkpoints/
+
+# Python
+__pycache__/
+*.py[cod]
+.ipynb_checkpoints/
+
+# Environnements locaux
+.env.local
+
+# Logs
+*.log
+
+# macOS
+.DS_Store
+
+# Docker (images exportées)
+*.tar.gz
